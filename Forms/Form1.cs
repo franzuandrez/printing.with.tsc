@@ -58,5 +58,10 @@ namespace TSCLIB_DLL_IN_C_Sharp
             frmPendingOrders.Show();
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

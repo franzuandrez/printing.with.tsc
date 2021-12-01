@@ -42,5 +42,44 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
 
 
         }
+
+
+
+
+        
+
+        public static void print( string code , string description , int quantity )
+        {
+           
+           
+          
+
+            byte status = TSCLIB_DLL.usbportqueryprinter();//0 = idle, 1 = head open, 16 = pause, following <ESC>!? command of TSPL manual
+            //TSCLIB_DLL.openport("TSC TE200");
+            byte[] result_unicode = System.Text.Encoding.GetEncoding("utf-16").GetBytes(description);
+            for (int i = 0; i < quantity; i++)
+            {
+                sendCommand(code, result_unicode);
+            }
+           
+            //TSCLIB_DLL.closeport();
+        }
+
+        private static void sendCommand(string code, byte[] description)
+        {
+            /* TSCLIB_DLL.sendcommand("SIZE 29 mm, 13 mm");
+             TSCLIB_DLL.sendcommand("SPEED 4");
+             TSCLIB_DLL.sendcommand("DENSITY 12");
+             TSCLIB_DLL.sendcommand("DIRECTION 1");
+             TSCLIB_DLL.sendcommand("SET TEAR ON");
+             TSCLIB_DLL.sendcommand("CODEPAGE UTF-8");
+             TSCLIB_DLL.clearbuffer();
+             TSCLIB_DLL.windowsfontUnicode(20, 3, 18, 0, 0, 0, "Arial", description);
+             TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "2", "2", code);
+             TSCLIB_DLL.printlabel("1", "1");*/
+
+            Console.WriteLine("Printing code {0} and name {1}",
+          code, System.Text.Encoding.Default.GetString(description));
+        }
     }
 }

@@ -36,9 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnImprimirTodo = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnReimprimir = new System.Windows.Forms.Button();
             this.pbOrders = new System.Windows.Forms.ProgressBar();
             this.pbPrintouts = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSKU = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.rtxtDescription = new System.Windows.Forms.RichTextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrintouts)).BeginInit();
             this.SuspendLayout();
@@ -66,8 +71,9 @@
             this.dataGridPrintouts.Location = new System.Drawing.Point(511, 122);
             this.dataGridPrintouts.Name = "dataGridPrintouts";
             this.dataGridPrintouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPrintouts.Size = new System.Drawing.Size(661, 413);
+            this.dataGridPrintouts.Size = new System.Drawing.Size(576, 413);
             this.dataGridPrintouts.TabIndex = 2;
+            this.dataGridPrintouts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPrintouts_CellClick);
             this.dataGridPrintouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
@@ -93,31 +99,23 @@
             // 
             // btnImprimirTodo
             // 
-            this.btnImprimirTodo.Location = new System.Drawing.Point(1178, 122);
+            this.btnImprimirTodo.Location = new System.Drawing.Point(1102, 466);
             this.btnImprimirTodo.Name = "btnImprimirTodo";
-            this.btnImprimirTodo.Size = new System.Drawing.Size(97, 70);
+            this.btnImprimirTodo.Size = new System.Drawing.Size(200, 36);
             this.btnImprimirTodo.TabIndex = 5;
-            this.btnImprimirTodo.Text = "Imprimir Todos los pendientes";
+            this.btnImprimirTodo.Text = "Imprimir todos los pendientes";
             this.btnImprimirTodo.UseVisualStyleBackColor = true;
             this.btnImprimirTodo.Click += new System.EventHandler(this.btnImprimirTodo_Click);
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(1178, 218);
+            this.btnImprimir.Location = new System.Drawing.Point(1102, 424);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(97, 74);
+            this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 6;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // btnReimprimir
-            // 
-            this.btnReimprimir.Location = new System.Drawing.Point(1178, 312);
-            this.btnReimprimir.Name = "btnReimprimir";
-            this.btnReimprimir.Size = new System.Drawing.Size(97, 74);
-            this.btnReimprimir.TabIndex = 7;
-            this.btnReimprimir.Text = "Reimprimir";
-            this.btnReimprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // pbOrders
             // 
@@ -130,18 +128,75 @@
             // 
             this.pbPrintouts.Location = new System.Drawing.Point(511, 281);
             this.pbPrintouts.Name = "pbPrintouts";
-            this.pbPrintouts.Size = new System.Drawing.Size(661, 23);
+            this.pbPrintouts.Size = new System.Drawing.Size(576, 23);
             this.pbPrintouts.TabIndex = 10;
             this.pbPrintouts.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1096, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "SKU:";
+            // 
+            // lblSKU
+            // 
+            this.lblSKU.AutoSize = true;
+            this.lblSKU.Location = new System.Drawing.Point(1096, 152);
+            this.lblSKU.Name = "lblSKU";
+            this.lblSKU.Size = new System.Drawing.Size(58, 13);
+            this.lblSKU.TabIndex = 12;
+            this.lblSKU.Text = "-----------------";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1099, 369);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Cantidad:";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(1096, 175);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(66, 13);
+            this.lblDescription.TabIndex = 15;
+            this.lblDescription.Text = "Descripción:";
+            // 
+            // rtxtDescription
+            // 
+            this.rtxtDescription.Enabled = false;
+            this.rtxtDescription.Location = new System.Drawing.Point(1099, 191);
+            this.rtxtDescription.Name = "rtxtDescription";
+            this.rtxtDescription.Size = new System.Drawing.Size(200, 168);
+            this.rtxtDescription.TabIndex = 17;
+            this.rtxtDescription.Text = "";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(1102, 398);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(200, 20);
+            this.txtQuantity.TabIndex = 18;
             // 
             // FrmPendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 677);
+            this.ClientSize = new System.Drawing.Size(1314, 677);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.rtxtDescription);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblSKU);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pbPrintouts);
             this.Controls.Add(this.pbOrders);
-            this.Controls.Add(this.btnReimprimir);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnImprimirTodo);
             this.Controls.Add(this.label2);
@@ -167,8 +222,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnImprimirTodo;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button btnReimprimir;
         private System.Windows.Forms.ProgressBar pbOrders;
         private System.Windows.Forms.ProgressBar pbPrintouts;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSKU;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.RichTextBox rtxtDescription;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }
