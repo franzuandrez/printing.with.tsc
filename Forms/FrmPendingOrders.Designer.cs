@@ -203,6 +203,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridPrintouts);
             this.Controls.Add(this.dataGridOrders);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPendingOrders";
             this.Text = "PendingOrders";
             this.Load += new System.EventHandler(this.FrmPendingOrders_Load);

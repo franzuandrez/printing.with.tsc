@@ -54,8 +54,20 @@ namespace TSCLIB_DLL_IN_C_Sharp
         private void verOrdenToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+
+            if (this.pnMain.Controls.Count > 0)
+            {
+                this.pnMain.Controls.RemoveAt(0);
+            }
             FrmPendingOrders frmPendingOrders = new FrmPendingOrders();
+            frmPendingOrders.TopLevel = false;
+            frmPendingOrders.Dock = DockStyle.Fill;
+            this.pnMain.Controls.Add(frmPendingOrders);
+            this.pnMain.Tag = frmPendingOrders;
+            this.pnMain.Size = frmPendingOrders.Size;
+            this.Location = frmPendingOrders.Location;
             frmPendingOrders.Show();
+            
 
         }
 
