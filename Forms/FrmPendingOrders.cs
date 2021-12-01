@@ -51,12 +51,16 @@ namespace TSCLIB_DLL_IN_C_Sharp
                 
         }
 
-        private void dataGridOrders_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridOrders.Rows[e.RowIndex];
                 Console.WriteLine(row.Cells[0].Value.ToString());
+
+                var printouts = await PrintoutsProcessor.LoadPrintouts(Int32.Parse(row.Cells[0].Value.ToString()));
+                dataGridPrintouts.EditMode = DataGridViewEditMode.EditProgrammatically;
+                dataGridPrintouts.DataSource = printouts;
             }
         }
 

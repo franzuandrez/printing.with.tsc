@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataSet1 = new System.Data.DataSet();
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridPrintouts = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.btnImprimirTodo = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnReimprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrintouts)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -45,30 +46,27 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
-            // 
             // dataGridOrders
             // 
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridOrders.Location = new System.Drawing.Point(70, 122);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridOrders.Size = new System.Drawing.Size(467, 227);
+            this.dataGridOrders.Size = new System.Drawing.Size(467, 413);
             this.dataGridOrders.TabIndex = 1;
             this.dataGridOrders.ReadOnlyChanged += new System.EventHandler(this.dataGridOrders_ReadOnlyChanged);
             this.dataGridOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellClick);
             this.dataGridOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellContentClick);
             // 
-            // dataGridView1
+            // dataGridPrintouts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(561, 122);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(366, 227);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridPrintouts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPrintouts.Location = new System.Drawing.Point(561, 122);
+            this.dataGridPrintouts.Name = "dataGridPrintouts";
+            this.dataGridPrintouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridPrintouts.Size = new System.Drawing.Size(507, 413);
+            this.dataGridPrintouts.TabIndex = 2;
+            this.dataGridPrintouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -89,21 +87,50 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Impresiones";
             // 
+            // btnImprimirTodo
+            // 
+            this.btnImprimirTodo.Location = new System.Drawing.Point(1074, 122);
+            this.btnImprimirTodo.Name = "btnImprimirTodo";
+            this.btnImprimirTodo.Size = new System.Drawing.Size(97, 70);
+            this.btnImprimirTodo.TabIndex = 5;
+            this.btnImprimirTodo.Text = "Imprimir Todos los pendientes";
+            this.btnImprimirTodo.UseVisualStyleBackColor = true;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(1074, 211);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(97, 74);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
+            // btnReimprimir
+            // 
+            this.btnReimprimir.Location = new System.Drawing.Point(1074, 309);
+            this.btnReimprimir.Name = "btnReimprimir";
+            this.btnReimprimir.Size = new System.Drawing.Size(97, 74);
+            this.btnReimprimir.TabIndex = 7;
+            this.btnReimprimir.Text = "Reimprimir";
+            this.btnReimprimir.UseVisualStyleBackColor = true;
+            // 
             // FrmPendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 385);
+            this.ClientSize = new System.Drawing.Size(1183, 547);
+            this.Controls.Add(this.btnReimprimir);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnImprimirTodo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridPrintouts);
             this.Controls.Add(this.dataGridOrders);
             this.Name = "FrmPendingOrders";
             this.Text = "PendingOrders";
             this.Load += new System.EventHandler(this.FrmPendingOrders_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrintouts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,10 +139,12 @@
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Data.DataSet dataSet1;
         private System.Windows.Forms.DataGridView dataGridOrders;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridPrintouts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnImprimirTodo;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnReimprimir;
     }
 }
