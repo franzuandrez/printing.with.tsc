@@ -45,6 +45,33 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
 
 
 
+        public static async Task<bool> storePrintouts( List<PrintoutModel> printouts)
+        {
+
+            string url = $"https://localhost/api-gomezmedical/public/api/v1/pending_printouts";
+
+            var printoutsModel = new PrintoutsModel() { Printouts = printouts };
+            
+            using (HttpResponseMessage response = await APIHelper.APIClient.PostAsJsonAsync(url, printoutsModel))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    var bodyResponse = JsonConvert.DeserializeObject<JObject>(content);
+                  
+                    return true;
+
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+
+
+
+
+            }
+        }
 
         
 
@@ -55,19 +82,19 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
           
 
             byte status = TSCLIB_DLL.usbportqueryprinter();//0 = idle, 1 = head open, 16 = pause, following <ESC>!? command of TSPL manual
-            //TSCLIB_DLL.openport("TSC TE200");
+            TSCLIB_DLL.openport("TSC TE200");
             byte[] result_unicode = System.Text.Encoding.GetEncoding("utf-16").GetBytes(description);
             for (int i = 0; i < quantity; i++)
             {
                 sendCommand(code, result_unicode);
             }
            
-            //TSCLIB_DLL.closeport();
+            TSCLIB_DLL.closeport();
         }
 
         private static void sendCommand(string code, byte[] description)
         {
-            /* TSCLIB_DLL.sendcommand("SIZE 29 mm, 13 mm");
+             TSCLIB_DLL.sendcommand("SIZE 29 mm, 13 mm");
              TSCLIB_DLL.sendcommand("SPEED 4");
              TSCLIB_DLL.sendcommand("DENSITY 12");
              TSCLIB_DLL.sendcommand("DIRECTION 1");
@@ -75,11 +102,17 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
              TSCLIB_DLL.sendcommand("CODEPAGE UTF-8");
              TSCLIB_DLL.clearbuffer();
              TSCLIB_DLL.windowsfontUnicode(20, 3, 18, 0, 0, 0, "Arial", description);
-             TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "2", "2", code);
-             TSCLIB_DLL.printlabel("1", "1");*/
-
-            Console.WriteLine("Printing code {0} and name {1}",
-          code, System.Text.Encoding.Default.GetString(description));
+            if(code.Length > 8)
+            {
+                TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "1", "1", code);
+            }
+            else
+            {
+                TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "2", "1", code);
+            }
+             
+             TSCLIB_DLL.printlabel("1", "1");
+            
         }
     }
 }

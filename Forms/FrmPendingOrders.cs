@@ -126,11 +126,23 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
+        private async void  btnImprimir_Click(object sender, EventArgs e)
         {
 
+           
+            PrintoutModel print = new PrintoutModel
+             {
+                Id = Int32.Parse(lblID.Text),
+                Quantity_Printed = Int32.Parse(txtQuantity.Text),
+                Printed_By= 1
+               
+            };
 
-            PrintoutsProcessor.print(lblSKU.Text, rtxtDescription.Text, Int32.Parse(txtQuantity.Text));
+            List<PrintoutModel> printoutModels =  new List<PrintoutModel>();
+            printoutModels.Add(print);
+            await PrintoutsProcessor.storePrintouts(printoutModels);
+            PrintoutsProcessor.print(lblSKU.Text, lblName.Text, Int32.Parse(txtQuantity.Text));
+
         }
 
         private void dataGridPrintouts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -139,8 +151,10 @@ namespace TSCLIB_DLL_IN_C_Sharp
             {
                 DataGridViewRow row = this.dataGridPrintouts.Rows[e.RowIndex];
                 lblSKU.Text = row.Cells["Sku"].Value.ToString();
+                lblID.Text = row.Cells["Id"].Value.ToString();
                 txtQuantity.Text = row.Cells["Quantity"].Value.ToString();
                 rtxtDescription.Text = row.Cells["Description"].Value.ToString();
+                lblName.Text = row.Cells["Name"].Value.ToString();
               
             }
         }
@@ -150,6 +164,12 @@ namespace TSCLIB_DLL_IN_C_Sharp
             lblSKU.Text = "";
             rtxtDescription.Text = "";
             txtQuantity.Text = "";
+            lblName.Text = "";
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }

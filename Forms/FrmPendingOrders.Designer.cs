@@ -44,6 +44,9 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.rtxtDescription = new System.Windows.Forms.RichTextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrintouts)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +102,7 @@
             // 
             // btnImprimirTodo
             // 
-            this.btnImprimirTodo.Location = new System.Drawing.Point(1102, 466);
+            this.btnImprimirTodo.Location = new System.Drawing.Point(1102, 497);
             this.btnImprimirTodo.Name = "btnImprimirTodo";
             this.btnImprimirTodo.Size = new System.Drawing.Size(200, 36);
             this.btnImprimirTodo.TabIndex = 5;
@@ -109,7 +112,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(1102, 424);
+            this.btnImprimir.Location = new System.Drawing.Point(1102, 455);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 6;
@@ -153,7 +156,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1099, 369);
+            this.label5.Location = new System.Drawing.Point(1102, 413);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 13;
@@ -162,7 +165,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(1096, 175);
+            this.lblDescription.Location = new System.Drawing.Point(1099, 213);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(66, 13);
             this.lblDescription.TabIndex = 15;
@@ -171,7 +174,7 @@
             // rtxtDescription
             // 
             this.rtxtDescription.Enabled = false;
-            this.rtxtDescription.Location = new System.Drawing.Point(1099, 191);
+            this.rtxtDescription.Location = new System.Drawing.Point(1102, 229);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(200, 168);
             this.rtxtDescription.TabIndex = 17;
@@ -179,16 +182,47 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(1102, 398);
+            this.txtQuantity.Location = new System.Drawing.Point(1102, 429);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(200, 20);
             this.txtQuantity.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1096, 175);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Nombre:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(1099, 188);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(58, 13);
+            this.lblName.TabIndex = 20;
+            this.lblName.Text = "-----------------";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(1085, 81);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(58, 13);
+            this.lblID.TabIndex = 21;
+            this.lblID.Text = "-----------------";
+            this.lblID.Click += new System.EventHandler(this.label6_Click);
             // 
             // FrmPendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 677);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.rtxtDescription);
             this.Controls.Add(this.lblDescription);
@@ -231,5 +265,8 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.RichTextBox rtxtDescription;
         private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblID;
     }
 }
