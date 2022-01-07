@@ -106,7 +106,8 @@ namespace TSCLIB_DLL_IN_C_Sharp
         {
             foreach (PrintoutModel print in printouts)
             {
-                PrintoutsProcessor.print(print.Sku, print.Name, print.Quantity);
+                int qty = print.Quantity - print.Quantity_Printed;
+                PrintoutsProcessor.print(print.Sku, print.Name, qty);
             }
         }
 
