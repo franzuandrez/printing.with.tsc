@@ -134,7 +134,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
              {
                 Id = Int32.Parse(lblID.Text),
                 Quantity_Printed = Int32.Parse(txtQuantity.Text),
-                Printed_By= 1
+                Printed_By= 1//TODO get id user loged
                
             };
 
@@ -150,9 +150,11 @@ namespace TSCLIB_DLL_IN_C_Sharp
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridPrintouts.Rows[e.RowIndex];
+                String quantity = (Int32.Parse( row.Cells["Quantity"].Value.ToString()) - Int32.Parse(row.Cells["Quantity_Printed"].Value.ToString())).ToString();
+             
                 lblSKU.Text = row.Cells["Sku"].Value.ToString();
                 lblID.Text = row.Cells["Id"].Value.ToString();
-                txtQuantity.Text = row.Cells["Quantity"].Value.ToString();
+                txtQuantity.Text = quantity;
                 rtxtDescription.Text = row.Cells["Description"].Value.ToString();
                 lblName.Text = row.Cells["Name"].Value.ToString();
               
