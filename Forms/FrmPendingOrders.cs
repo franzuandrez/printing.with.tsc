@@ -19,6 +19,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
         }
 
         private List<PrintoutModel> printouts;
+        DataGridViewRow orderSelected;
         DataGridViewRow rowToPrint;
 
         private void showProgressBar(ProgressBar progressBar)
@@ -50,13 +51,15 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         private async void loadPrintingList()
         {
+           
             showProgressBar(pbPrintouts);
-            var printouts = await PrintoutsProcessor.LoadPrintouts(Int32.Parse(rowToPrint.Cells[0].Value.ToString()));
+            var printouts = await PrintoutsProcessor.LoadPrintouts(Int32.Parse(orderSelected.Cells[0].Value.ToString()));
             dataGridPrintouts.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridPrintouts.DataSource = printouts;
             this.printouts = printouts;
             hideProgressBar(pbPrintouts);
-        
+            dataGridPrintouts.ClearSelection();
+
         }
         private async void FrmPendingOrders_Load(object sender, EventArgs e)
         {
@@ -70,6 +73,17 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         }
 
+        private void setValuesPrintSelected()
+        {
+
+            String quantity = (Int32.Parse(rowToPrint.Cells["Quantity"].Value.ToString()) - Int32.Parse(rowToPrint.Cells["Quantity_Printed"].Value.ToString())).ToString();
+
+            lblSKU.Text = rowToPrint.Cells["Sku"].Value.ToString();
+            lblID.Text = rowToPrint.Cells["Id"].Value.ToString();
+            txtQuantity.Text = quantity;
+            rtxtDescription.Text = rowToPrint.Cells["Description"].Value.ToString();
+            lblName.Text = rowToPrint.Cells["Name"].Value.ToString();
+        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,11 +109,12 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         }
 
-        private async void dataGridOrders_CellClick(object sender, DataGridViewCellEventArgs e)
+        private  void dataGridOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                 rowToPrint = this.dataGridOrders.Rows[e.RowIndex];
+                 orderSelected = this.dataGridOrders.Rows[e.RowIndex];
+
                 loadPrintingList();
                 clearPrintoutSelected();
             }
@@ -151,10 +166,12 @@ namespace TSCLIB_DLL_IN_C_Sharp
             printoutModels.Add(print);
             await PrintoutsProcessor.storePrintouts(printoutModels);
             PrintoutsProcessor.print(lblSKU.Text, lblName.Text, Int32.Parse(txtQuantity.Text));
-            if (rowToPrint != null)
+            if (orderSelected != null)
             {
                 loadPrintingList();
+                
             }
+            
 
         }
 
@@ -162,15 +179,10 @@ namespace TSCLIB_DLL_IN_C_Sharp
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dataGridPrintouts.Rows[e.RowIndex];
-                String quantity = (Int32.Parse( row.Cells["Quantity"].Value.ToString()) - Int32.Parse(row.Cells["Quantity_Printed"].Value.ToString())).ToString();
-             
-                lblSKU.Text = row.Cells["Sku"].Value.ToString();
-                lblID.Text = row.Cells["Id"].Value.ToString();
-                txtQuantity.Text = quantity;
-                rtxtDescription.Text = row.Cells["Description"].Value.ToString();
-                lblName.Text = row.Cells["Name"].Value.ToString();
-              
+                rowToPrint = this.dataGridPrintouts.Rows[e.RowIndex];
+                setValuesPrintSelected();
+
+
             }
         }
 
