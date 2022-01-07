@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSCLIB_DLL_IN_C_Sharp.App;
 using TSCLIB_DLL_IN_C_Sharp.Models;
@@ -18,6 +19,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
         }
 
         private List<PrintoutModel> printouts;
+        DataGridViewRow rowToPrint;
 
         private void showProgressBar(ProgressBar progressBar)
         {
@@ -43,6 +45,18 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
             progressBar.Visible = false;
 
+        }
+
+
+        private async void loadPrintingList()
+        {
+            showProgressBar(pbPrintouts);
+            var printouts = await PrintoutsProcessor.LoadPrintouts(Int32.Parse(rowToPrint.Cells[0].Value.ToString()));
+            dataGridPrintouts.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridPrintouts.DataSource = printouts;
+            this.printouts = printouts;
+            hideProgressBar(pbPrintouts);
+        
         }
         private async void FrmPendingOrders_Load(object sender, EventArgs e)
         {
@@ -85,14 +99,8 @@ namespace TSCLIB_DLL_IN_C_Sharp
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dataGridOrders.Rows[e.RowIndex];
-
-                showProgressBar(pbPrintouts);
-                var printouts = await PrintoutsProcessor.LoadPrintouts(Int32.Parse(row.Cells[0].Value.ToString()));
-                dataGridPrintouts.EditMode = DataGridViewEditMode.EditProgrammatically;
-                dataGridPrintouts.DataSource = printouts;
-                this.printouts = printouts;
-                hideProgressBar(pbPrintouts);
+                 rowToPrint = this.dataGridOrders.Rows[e.RowIndex];
+                loadPrintingList();
                 clearPrintoutSelected();
             }
         }
@@ -143,6 +151,10 @@ namespace TSCLIB_DLL_IN_C_Sharp
             printoutModels.Add(print);
             await PrintoutsProcessor.storePrintouts(printoutModels);
             PrintoutsProcessor.print(lblSKU.Text, lblName.Text, Int32.Parse(txtQuantity.Text));
+            if (rowToPrint != null)
+            {
+                loadPrintingList();
+            }
 
         }
 
