@@ -97,6 +97,14 @@ namespace TSCLIB_DLL_IN_C_Sharp
             lblName.Text = rowToPrint.Cells["Name"].Value.ToString();
         }
 
+        private void setValuesOrderSelected()
+        {
+
+            lblVendor.Text = orderSelected.Cells["Vendor"].Value.ToString();
+            lblOrderDate.Text = orderSelected.Cells["Order_Date"].Value.ToString();
+            lblTotalPendingPrintouts.Text = "0";
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -128,6 +136,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
                  orderSelected = this.dataGridOrders.Rows[e.RowIndex];
 
                 loadPrintingList();
+                setValuesOrderSelected();
                 clearPrintoutSelected();
             }
         }

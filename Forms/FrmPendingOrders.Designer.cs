@@ -49,6 +49,12 @@
             this.lblID = new System.Windows.Forms.Label();
             this.cmbxLabelsType = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblVendor = new System.Windows.Forms.Label();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.lblTotalPendingPrintouts = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrintouts)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +122,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(969, 617);
+            this.btnImprimir.Location = new System.Drawing.Point(969, 618);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 6;
@@ -135,7 +141,7 @@
             // 
             this.pbPrintouts.Location = new System.Drawing.Point(17, 366);
             this.pbPrintouts.Name = "pbPrintouts";
-            this.pbPrintouts.Size = new System.Drawing.Size(946, 19);
+            this.pbPrintouts.Size = new System.Drawing.Size(946, 20);
             this.pbPrintouts.TabIndex = 10;
             this.pbPrintouts.Visible = false;
             // 
@@ -143,7 +149,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(966, 293);
+            this.label3.Location = new System.Drawing.Point(966, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 11;
@@ -192,7 +198,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(969, 591);
+            this.txtQuantity.Location = new System.Drawing.Point(969, 592);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(200, 22);
             this.txtQuantity.TabIndex = 18;
@@ -247,11 +253,76 @@
             this.label6.Text = "Etiqueta:";
             this.label6.Click += new System.EventHandler(this.label6_Click_1);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(490, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 25);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Proveedor:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(490, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 25);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Fecha:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(490, 127);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(248, 25);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Impresiones pendientes:";
+            // 
+            // lblVendor
+            // 
+            this.lblVendor.AutoSize = true;
+            this.lblVendor.Font = new System.Drawing.Font("Noto Serif Armenian", 12F);
+            this.lblVendor.Location = new System.Drawing.Point(751, 59);
+            this.lblVendor.Name = "lblVendor";
+            this.lblVendor.Size = new System.Drawing.Size(0, 22);
+            this.lblVendor.TabIndex = 27;
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Font = new System.Drawing.Font("Noto Serif Armenian", 12F);
+            this.lblOrderDate.Location = new System.Drawing.Point(751, 99);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(0, 22);
+            this.lblOrderDate.TabIndex = 28;
+            // 
+            // lblTotalPendingPrintouts
+            // 
+            this.lblTotalPendingPrintouts.AutoSize = true;
+            this.lblTotalPendingPrintouts.Font = new System.Drawing.Font("Noto Serif Armenian", 12F);
+            this.lblTotalPendingPrintouts.Location = new System.Drawing.Point(751, 139);
+            this.lblTotalPendingPrintouts.Name = "lblTotalPendingPrintouts";
+            this.lblTotalPendingPrintouts.Size = new System.Drawing.Size(0, 22);
+            this.lblTotalPendingPrintouts.TabIndex = 29;
+            // 
             // FrmPendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 762);
+            this.Controls.Add(this.lblTotalPendingPrintouts);
+            this.Controls.Add(this.lblOrderDate);
+            this.Controls.Add(this.lblVendor);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbxLabelsType);
             this.Controls.Add(this.lblID);
@@ -304,5 +375,11 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.ComboBox cmbxLabelsType;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblVendor;
+        private System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.Label lblTotalPendingPrintouts;
     }
 }
