@@ -61,7 +61,7 @@
             // dataGridOrders
             // 
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrders.Location = new System.Drawing.Point(21, 82);
+            this.dataGridOrders.Location = new System.Drawing.Point(17, 50);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridOrders.Size = new System.Drawing.Size(467, 152);
@@ -73,10 +73,10 @@
             // dataGridPrintouts
             // 
             this.dataGridPrintouts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPrintouts.Location = new System.Drawing.Point(21, 273);
+            this.dataGridPrintouts.Location = new System.Drawing.Point(17, 241);
             this.dataGridPrintouts.Name = "dataGridPrintouts";
             this.dataGridPrintouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPrintouts.Size = new System.Drawing.Size(946, 457);
+            this.dataGridPrintouts.Size = new System.Drawing.Size(946, 465);
             this.dataGridPrintouts.TabIndex = 2;
             this.dataGridPrintouts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPrintouts_CellClick);
             this.dataGridPrintouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -84,10 +84,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 41);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(461, 25);
+            this.label1.Size = new System.Drawing.Size(443, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "Listado de Ordenes Pendientes de ingreso";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -95,18 +95,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 245);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 208);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 25);
+            this.label2.Size = new System.Drawing.Size(136, 30);
             this.label2.TabIndex = 4;
             this.label2.Text = "Impresiones";
             // 
             // btnImprimirTodo
             // 
-            this.btnImprimirTodo.Location = new System.Drawing.Point(973, 691);
+            this.btnImprimirTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirTodo.Location = new System.Drawing.Point(969, 659);
             this.btnImprimirTodo.Name = "btnImprimirTodo";
-            this.btnImprimirTodo.Size = new System.Drawing.Size(200, 36);
+            this.btnImprimirTodo.Size = new System.Drawing.Size(200, 47);
             this.btnImprimirTodo.TabIndex = 5;
             this.btnImprimirTodo.Text = "Imprimir todos los pendientes";
             this.btnImprimirTodo.UseVisualStyleBackColor = true;
@@ -114,7 +115,8 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(973, 649);
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(969, 617);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 6;
@@ -124,14 +126,14 @@
             // 
             // pbOrders
             // 
-            this.pbOrders.Location = new System.Drawing.Point(21, 138);
+            this.pbOrders.Location = new System.Drawing.Point(17, 106);
             this.pbOrders.Name = "pbOrders";
             this.pbOrders.Size = new System.Drawing.Size(467, 23);
             this.pbOrders.TabIndex = 9;
             // 
             // pbPrintouts
             // 
-            this.pbPrintouts.Location = new System.Drawing.Point(21, 398);
+            this.pbPrintouts.Location = new System.Drawing.Point(17, 366);
             this.pbPrintouts.Name = "pbPrintouts";
             this.pbPrintouts.Size = new System.Drawing.Size(946, 19);
             this.pbPrintouts.TabIndex = 10;
@@ -140,43 +142,48 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(970, 325);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(966, 293);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 11;
             this.label3.Text = "SKU:";
             // 
             // lblSKU
             // 
             this.lblSKU.AutoSize = true;
-            this.lblSKU.Location = new System.Drawing.Point(970, 349);
+            this.lblSKU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSKU.Location = new System.Drawing.Point(966, 317);
             this.lblSKU.Name = "lblSKU";
-            this.lblSKU.Size = new System.Drawing.Size(58, 13);
+            this.lblSKU.Size = new System.Drawing.Size(75, 15);
             this.lblSKU.TabIndex = 12;
             this.lblSKU.Text = "-----------------";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(973, 607);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(969, 575);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 13;
             this.label5.Text = "Cantidad:";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(970, 410);
+            this.lblDescription.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(966, 378);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(66, 13);
+            this.lblDescription.Size = new System.Drawing.Size(84, 15);
             this.lblDescription.TabIndex = 15;
             this.lblDescription.Text = "Descripción:";
             // 
             // rtxtDescription
             // 
             this.rtxtDescription.Enabled = false;
-            this.rtxtDescription.Location = new System.Drawing.Point(973, 426);
+            this.rtxtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxtDescription.Location = new System.Drawing.Point(969, 394);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(200, 168);
             this.rtxtDescription.TabIndex = 17;
@@ -184,33 +191,36 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(973, 623);
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(969, 591);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(200, 20);
+            this.txtQuantity.Size = new System.Drawing.Size(200, 22);
             this.txtQuantity.TabIndex = 18;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(970, 372);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(966, 340);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 19;
             this.label4.Text = "Nombre:";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(973, 385);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(969, 353);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(58, 13);
+            this.lblName.Size = new System.Drawing.Size(75, 15);
             this.lblName.TabIndex = 20;
             this.lblName.Text = "-----------------";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(967, 245);
+            this.lblID.Location = new System.Drawing.Point(963, 213);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(58, 13);
             this.lblID.TabIndex = 21;
@@ -221,7 +231,7 @@
             // cmbxLabelsType
             // 
             this.cmbxLabelsType.FormattingEnabled = true;
-            this.cmbxLabelsType.Location = new System.Drawing.Point(973, 291);
+            this.cmbxLabelsType.Location = new System.Drawing.Point(969, 259);
             this.cmbxLabelsType.Name = "cmbxLabelsType";
             this.cmbxLabelsType.Size = new System.Drawing.Size(200, 21);
             this.cmbxLabelsType.TabIndex = 22;
@@ -229,9 +239,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(970, 273);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(966, 241);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(62, 15);
             this.label6.TabIndex = 23;
             this.label6.Text = "Etiqueta:";
             this.label6.Click += new System.EventHandler(this.label6_Click_1);
