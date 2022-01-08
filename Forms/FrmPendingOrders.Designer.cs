@@ -59,10 +59,10 @@
             // dataGridOrders
             // 
             this.dataGridOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrders.Location = new System.Drawing.Point(21, 122);
+            this.dataGridOrders.Location = new System.Drawing.Point(21, 82);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridOrders.Size = new System.Drawing.Size(467, 413);
+            this.dataGridOrders.Size = new System.Drawing.Size(467, 152);
             this.dataGridOrders.TabIndex = 1;
             this.dataGridOrders.ReadOnlyChanged += new System.EventHandler(this.dataGridOrders_ReadOnlyChanged);
             this.dataGridOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellClick);
@@ -71,10 +71,10 @@
             // dataGridPrintouts
             // 
             this.dataGridPrintouts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPrintouts.Location = new System.Drawing.Point(511, 122);
+            this.dataGridPrintouts.Location = new System.Drawing.Point(21, 273);
             this.dataGridPrintouts.Name = "dataGridPrintouts";
             this.dataGridPrintouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPrintouts.Size = new System.Drawing.Size(576, 413);
+            this.dataGridPrintouts.Size = new System.Drawing.Size(1018, 401);
             this.dataGridPrintouts.TabIndex = 2;
             this.dataGridPrintouts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPrintouts_CellClick);
             this.dataGridPrintouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 81);
+            this.label1.Location = new System.Drawing.Point(16, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(461, 25);
             this.label1.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(506, 81);
+            this.label2.Location = new System.Drawing.Point(16, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 25);
             this.label2.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             // btnImprimirTodo
             // 
-            this.btnImprimirTodo.Location = new System.Drawing.Point(1102, 497);
+            this.btnImprimirTodo.Location = new System.Drawing.Point(1045, 638);
             this.btnImprimirTodo.Name = "btnImprimirTodo";
             this.btnImprimirTodo.Size = new System.Drawing.Size(200, 36);
             this.btnImprimirTodo.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(1102, 455);
+            this.btnImprimir.Location = new System.Drawing.Point(1045, 596);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 6;
@@ -122,23 +122,23 @@
             // 
             // pbOrders
             // 
-            this.pbOrders.Location = new System.Drawing.Point(21, 282);
+            this.pbOrders.Location = new System.Drawing.Point(21, 138);
             this.pbOrders.Name = "pbOrders";
             this.pbOrders.Size = new System.Drawing.Size(467, 23);
             this.pbOrders.TabIndex = 9;
             // 
             // pbPrintouts
             // 
-            this.pbPrintouts.Location = new System.Drawing.Point(511, 281);
+            this.pbPrintouts.Location = new System.Drawing.Point(21, 398);
             this.pbPrintouts.Name = "pbPrintouts";
-            this.pbPrintouts.Size = new System.Drawing.Size(576, 23);
+            this.pbPrintouts.Size = new System.Drawing.Size(1018, 19);
             this.pbPrintouts.TabIndex = 10;
             this.pbPrintouts.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1096, 126);
+            this.label3.Location = new System.Drawing.Point(1042, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 11;
@@ -147,7 +147,7 @@
             // lblSKU
             // 
             this.lblSKU.AutoSize = true;
-            this.lblSKU.Location = new System.Drawing.Point(1096, 152);
+            this.lblSKU.Location = new System.Drawing.Point(1042, 296);
             this.lblSKU.Name = "lblSKU";
             this.lblSKU.Size = new System.Drawing.Size(58, 13);
             this.lblSKU.TabIndex = 12;
@@ -156,7 +156,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1102, 413);
+            this.label5.Location = new System.Drawing.Point(1045, 554);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 13;
@@ -165,7 +165,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(1099, 213);
+            this.lblDescription.Location = new System.Drawing.Point(1042, 357);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(66, 13);
             this.lblDescription.TabIndex = 15;
@@ -174,7 +174,7 @@
             // rtxtDescription
             // 
             this.rtxtDescription.Enabled = false;
-            this.rtxtDescription.Location = new System.Drawing.Point(1102, 229);
+            this.rtxtDescription.Location = new System.Drawing.Point(1045, 373);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(200, 168);
             this.rtxtDescription.TabIndex = 17;
@@ -182,7 +182,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(1102, 429);
+            this.txtQuantity.Location = new System.Drawing.Point(1045, 570);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(200, 20);
             this.txtQuantity.TabIndex = 18;
@@ -190,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1096, 175);
+            this.label4.Location = new System.Drawing.Point(1042, 319);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 19;
@@ -199,7 +199,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(1099, 188);
+            this.lblName.Location = new System.Drawing.Point(1045, 332);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(58, 13);
             this.lblName.TabIndex = 20;
@@ -208,18 +208,19 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(1085, 81);
+            this.lblID.Location = new System.Drawing.Point(1039, 245);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(58, 13);
             this.lblID.TabIndex = 21;
             this.lblID.Text = "-----------------";
+            this.lblID.Visible = false;
             this.lblID.Click += new System.EventHandler(this.label6_Click);
             // 
             // FrmPendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 677);
+            this.ClientSize = new System.Drawing.Size(1321, 762);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
