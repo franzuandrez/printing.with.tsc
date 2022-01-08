@@ -48,6 +48,16 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         }
 
+        private void loadLabelsType()
+        {
+            var dataSource = new List<LabelType>();
+            dataSource.Add(new LabelType() { Id=1, Dimension="1 x 0.5", Unit="Pulgadas"});
+            dataSource.Add(new LabelType() { Id=2, Dimension = "1.5 x 1", Unit="Pulgadas"});
+            this.cmbxLabelsType.DataSource = dataSource;
+            this.cmbxLabelsType.DisplayMember = "Name";
+            this.cmbxLabelsType.ValueMember = "Id";
+            this.cmbxLabelsType.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
 
         private async void loadPrintingList()
         {
@@ -71,6 +81,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
             dataGridOrders.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridOrders.DataSource = orders;
             dataGridOrders.ClearSelection();
+            loadLabelsType();
 
         }
 
@@ -197,6 +208,11 @@ namespace TSCLIB_DLL_IN_C_Sharp
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
         {
 
         }

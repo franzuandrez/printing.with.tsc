@@ -47,6 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.cmbxLabelsType = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrintouts)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +76,7 @@
             this.dataGridPrintouts.Location = new System.Drawing.Point(21, 273);
             this.dataGridPrintouts.Name = "dataGridPrintouts";
             this.dataGridPrintouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPrintouts.Size = new System.Drawing.Size(1018, 401);
+            this.dataGridPrintouts.Size = new System.Drawing.Size(946, 457);
             this.dataGridPrintouts.TabIndex = 2;
             this.dataGridPrintouts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPrintouts_CellClick);
             this.dataGridPrintouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -102,7 +104,7 @@
             // 
             // btnImprimirTodo
             // 
-            this.btnImprimirTodo.Location = new System.Drawing.Point(1045, 638);
+            this.btnImprimirTodo.Location = new System.Drawing.Point(973, 691);
             this.btnImprimirTodo.Name = "btnImprimirTodo";
             this.btnImprimirTodo.Size = new System.Drawing.Size(200, 36);
             this.btnImprimirTodo.TabIndex = 5;
@@ -112,7 +114,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(1045, 596);
+            this.btnImprimir.Location = new System.Drawing.Point(973, 649);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 6;
@@ -131,14 +133,14 @@
             // 
             this.pbPrintouts.Location = new System.Drawing.Point(21, 398);
             this.pbPrintouts.Name = "pbPrintouts";
-            this.pbPrintouts.Size = new System.Drawing.Size(1018, 19);
+            this.pbPrintouts.Size = new System.Drawing.Size(946, 19);
             this.pbPrintouts.TabIndex = 10;
             this.pbPrintouts.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1042, 272);
+            this.label3.Location = new System.Drawing.Point(970, 325);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 11;
@@ -147,7 +149,7 @@
             // lblSKU
             // 
             this.lblSKU.AutoSize = true;
-            this.lblSKU.Location = new System.Drawing.Point(1042, 296);
+            this.lblSKU.Location = new System.Drawing.Point(970, 349);
             this.lblSKU.Name = "lblSKU";
             this.lblSKU.Size = new System.Drawing.Size(58, 13);
             this.lblSKU.TabIndex = 12;
@@ -156,7 +158,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1045, 554);
+            this.label5.Location = new System.Drawing.Point(973, 607);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 13;
@@ -165,7 +167,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(1042, 357);
+            this.lblDescription.Location = new System.Drawing.Point(970, 410);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(66, 13);
             this.lblDescription.TabIndex = 15;
@@ -174,7 +176,7 @@
             // rtxtDescription
             // 
             this.rtxtDescription.Enabled = false;
-            this.rtxtDescription.Location = new System.Drawing.Point(1045, 373);
+            this.rtxtDescription.Location = new System.Drawing.Point(973, 426);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(200, 168);
             this.rtxtDescription.TabIndex = 17;
@@ -182,7 +184,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(1045, 570);
+            this.txtQuantity.Location = new System.Drawing.Point(973, 623);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(200, 20);
             this.txtQuantity.TabIndex = 18;
@@ -190,7 +192,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1042, 319);
+            this.label4.Location = new System.Drawing.Point(970, 372);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 19;
@@ -199,7 +201,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(1045, 332);
+            this.lblName.Location = new System.Drawing.Point(973, 385);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(58, 13);
             this.lblName.TabIndex = 20;
@@ -208,7 +210,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(1039, 245);
+            this.lblID.Location = new System.Drawing.Point(967, 245);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(58, 13);
             this.lblID.TabIndex = 21;
@@ -216,11 +218,31 @@
             this.lblID.Visible = false;
             this.lblID.Click += new System.EventHandler(this.label6_Click);
             // 
+            // cmbxLabelsType
+            // 
+            this.cmbxLabelsType.FormattingEnabled = true;
+            this.cmbxLabelsType.Location = new System.Drawing.Point(973, 291);
+            this.cmbxLabelsType.Name = "cmbxLabelsType";
+            this.cmbxLabelsType.Size = new System.Drawing.Size(200, 21);
+            this.cmbxLabelsType.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(970, 273);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Etiqueta:";
+            this.label6.Click += new System.EventHandler(this.label6_Click_1);
+            // 
             // FrmPendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 762);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbxLabelsType);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
@@ -269,5 +291,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ComboBox cmbxLabelsType;
+        private System.Windows.Forms.Label label6;
     }
 }
