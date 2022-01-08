@@ -106,28 +106,8 @@ namespace TSCLIB_DLL_IN_C_Sharp
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
 
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
 
         private  void dataGridOrders_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -141,10 +121,6 @@ namespace TSCLIB_DLL_IN_C_Sharp
             }
         }
 
-        private void dataGridOrders_ReadOnlyChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnImprimirTodo_Click(object sender, EventArgs e)
         {
@@ -155,21 +131,6 @@ namespace TSCLIB_DLL_IN_C_Sharp
             }
         }
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-
-        }
-
-        private void pcLoader_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void  btnImprimir_Click(object sender, EventArgs e)
         {
@@ -216,24 +177,5 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -72,9 +72,9 @@
             this.dataGridOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridOrders.Size = new System.Drawing.Size(467, 152);
             this.dataGridOrders.TabIndex = 1;
-            this.dataGridOrders.ReadOnlyChanged += new System.EventHandler(this.dataGridOrders_ReadOnlyChanged);
+          
             this.dataGridOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellClick);
-            this.dataGridOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellContentClick);
+          
             // 
             // dataGridPrintouts
             // 
@@ -85,7 +85,7 @@
             this.dataGridPrintouts.Size = new System.Drawing.Size(946, 465);
             this.dataGridPrintouts.TabIndex = 2;
             this.dataGridPrintouts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPrintouts_CellClick);
-            this.dataGridPrintouts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+         
             // 
             // label1
             // 
@@ -96,7 +96,7 @@
             this.label1.Size = new System.Drawing.Size(443, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "Listado de Ordenes Pendientes de ingreso";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // label2
             // 
@@ -232,7 +232,7 @@
             this.lblID.TabIndex = 21;
             this.lblID.Text = "-----------------";
             this.lblID.Visible = false;
-            this.lblID.Click += new System.EventHandler(this.label6_Click);
+        
             // 
             // cmbxLabelsType
             // 
@@ -251,7 +251,7 @@
             this.label6.Size = new System.Drawing.Size(62, 15);
             this.label6.TabIndex = 23;
             this.label6.Text = "Etiqueta:";
-            this.label6.Click += new System.EventHandler(this.label6_Click_1);
+          
             // 
             // label7
             // 
@@ -262,7 +262,7 @@
             this.label7.Size = new System.Drawing.Size(118, 25);
             this.label7.TabIndex = 24;
             this.label7.Text = "Proveedor:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+           
             // 
             // label8
             // 
@@ -273,7 +273,7 @@
             this.label8.Size = new System.Drawing.Size(79, 25);
             this.label8.TabIndex = 25;
             this.label8.Text = "Fecha:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            
             // 
             // label9
             // 
