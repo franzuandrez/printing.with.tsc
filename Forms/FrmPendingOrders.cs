@@ -70,6 +70,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
             hideProgressBar(pbOrders);
             dataGridOrders.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridOrders.DataSource = orders;
+            dataGridOrders.ClearSelection();
 
         }
 
