@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="App\ListoToDataTableConverter.cs" />
     <Compile Include="App\PrintoutsProcessor.cs" />
+    <Compile Include="DataSource\LabelTypes.cs" />
     <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -106,7 +107,7 @@
     <Compile Include="App\PendingOrdersProcessor.cs" />
     <Compile Include="Models\PrintoutModel.cs" />
     <Compile Include="Models\PrintoutsModel.cs" />
-    <Compile Include="Models\LabelType.cs" />
+    <Compile Include="Models\LabelTypeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\PurchaseModel.cs" />

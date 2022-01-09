@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using TSCLIB_DLL_IN_C_Sharp.App;
 using TSCLIB_DLL_IN_C_Sharp.Models;
 using System.Linq;
+using TSCLIB_DLL_IN_C_Sharp.DataSource;
+
 namespace TSCLIB_DLL_IN_C_Sharp
 {
     public partial class FrmPendingOrders : Form
@@ -50,10 +52,8 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         private void loadLabelsType()
         {
-            var dataSource = new List<LabelType>();
-            dataSource.Add(new LabelType() { Id=1, Dimension="1 x 0.5", Unit="Pulgadas"});
-            dataSource.Add(new LabelType() { Id=2, Dimension = "1.5 x 1", Unit="Pulgadas"});
-            this.cmbxLabelsType.DataSource = dataSource;
+          
+            this.cmbxLabelsType.DataSource = LabelTypes.labels(); ;
             this.cmbxLabelsType.DisplayMember = "Name";
             this.cmbxLabelsType.ValueMember = "Id";
             this.cmbxLabelsType.DropDownStyle = ComboBoxStyle.DropDownList;

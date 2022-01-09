@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TSCLIB_DLL_IN_C_Sharp.Models
 {
-    public class LabelType
+    public class LabelTypeModel
     {
         public int Id { get; set; }
         public String Dimension { get; set; }
