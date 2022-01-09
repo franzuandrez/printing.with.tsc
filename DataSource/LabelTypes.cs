@@ -13,8 +13,8 @@ namespace TSCLIB_DLL_IN_C_Sharp.DataSource
         public static List<LabelTypeModel> labels()
         {
             var dataSource = new List<LabelTypeModel>();
-            dataSource.Add(new LabelTypeModel() { Id = 1, Dimension = "29 x 13", Unit = "Milimetros" });
-            dataSource.Add(new LabelTypeModel() { Id = 2, Dimension = "39 x 25", Unit = "Milimetros" });
+            dataSource.Add(new LabelTypeModel() { Id = 1, Dimension = "29 mm, 13 mm", Unit = "Milimetros" });
+            dataSource.Add(new LabelTypeModel() { Id = 2, Dimension = "39 mm, 25 mm", Unit = "Milimetros" });
 
             return dataSource;
         }

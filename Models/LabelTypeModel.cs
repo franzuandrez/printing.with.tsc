@@ -16,8 +16,8 @@ namespace TSCLIB_DLL_IN_C_Sharp.Models
         
         get 
             {
-                return Dimension +' '+ Unit;
-            } set { Name = Dimension + ' '+ Unit; }
+                return Dimension + " / " + Unit;
+            } set { Name = Dimension + " / "+ Unit; }
         }
 
     }
