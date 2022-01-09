@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TSCLIB_DLL_IN_C_Sharp.App;
 using TSCLIB_DLL_IN_C_Sharp.Models;
-
+using System.Linq;
 namespace TSCLIB_DLL_IN_C_Sharp
 {
     public partial class FrmPendingOrders : Form
@@ -67,6 +67,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
             dataGridPrintouts.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridPrintouts.DataSource = printouts;
             this.printouts = printouts;
+            lblTotalPendingPrintouts.Text = printouts.Sum( print => print.Quantity - print.Quantity_Printed ).ToString();
             hideProgressBar(pbPrintouts);
             dataGridPrintouts.ClearSelection();
 
