@@ -14,6 +14,8 @@ namespace TSCLIB_DLL_IN_C_Sharp
         public Form1()
         {
             InitializeComponent();
+            pnMain.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left;
+            //pnMain.Anchor = System.Windows.Forms.AnchorStyles.None;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,6 +93,11 @@ namespace TSCLIB_DLL_IN_C_Sharp
             {
                 this.pnMain.Controls.RemoveAt(0);
             }
+        }
+
+        private void pnMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
