@@ -71,6 +71,15 @@ namespace TSCLIB_DLL_IN_C_Sharp
             this.printouts = printouts;
             lblTotalPendingPrintouts.Text = printouts.Sum( print => print.Quantity - print.Quantity_Printed ).ToString();
             hideProgressBar(pbPrintouts);
+            dataGridPrintouts.Columns["Id"].HeaderText = "Id";
+            dataGridPrintouts.Columns["Product_id"].Visible = false;
+            dataGridPrintouts.Columns["Name"].HeaderText = "Nombre";
+            dataGridPrintouts.Columns["Description"].HeaderText = "Descripción";
+            dataGridPrintouts.Columns["Sku"].HeaderText = "SKU";
+            dataGridPrintouts.Columns["Quantity"].HeaderText = "Cantidad Impresiones";
+            dataGridPrintouts.Columns["Quantity_Printed"].HeaderText = "Cantidad Impresa";
+            dataGridPrintouts.Columns["Printed_By"].HeaderText = "Impreso Por";
+            dataGridPrintouts.Columns["Is_Printed"].HeaderText = "Impresion Completa";
             dataGridPrintouts.ClearSelection();
 
         }
