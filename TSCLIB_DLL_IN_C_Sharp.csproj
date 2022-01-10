@@ -88,9 +88,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\InventoryPrintoutsProcessor.cs" />
     <Compile Include="App\ListoToDataTableConverter.cs" />
     <Compile Include="App\PrintoutsProcessor.cs" />
     <Compile Include="DataSource\LabelTypes.cs" />
+    <Compile Include="Forms\FrmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmInventory.Designer.cs">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -114,6 +121,9 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmInventory.resx">
+      <DependentUpon>FrmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPendingOrders.resx">
       <DependentUpon>FrmPendingOrders.cs</DependentUpon>

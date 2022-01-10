@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verOrdenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +49,8 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verOrdenToolStripMenuItem});
+            this.verOrdenToolStripMenuItem,
+            this.ingresoInventarioToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.archivoToolStripMenuItem.Text = "Inicio";
@@ -57,9 +59,16 @@
             // verOrdenToolStripMenuItem
             // 
             this.verOrdenToolStripMenuItem.Name = "verOrdenToolStripMenuItem";
-            this.verOrdenToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.verOrdenToolStripMenuItem.Text = "Ver Ordenes pendientes";
+            this.verOrdenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verOrdenToolStripMenuItem.Text = "Ordenes de compra";
             this.verOrdenToolStripMenuItem.Click += new System.EventHandler(this.verOrdenToolStripMenuItem_Click);
+            // 
+            // ingresoInventarioToolStripMenuItem
+            // 
+            this.ingresoInventarioToolStripMenuItem.Name = "ingresoInventarioToolStripMenuItem";
+            this.ingresoInventarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresoInventarioToolStripMenuItem.Text = "Ingreso Inventario";
+            this.ingresoInventarioToolStripMenuItem.Click += new System.EventHandler(this.ingresoInventarioToolStripMenuItem_Click);
             // 
             // pnMain
             // 
@@ -93,6 +102,7 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verOrdenToolStripMenuItem;
         private System.Windows.Forms.Panel pnMain;
+        private System.Windows.Forms.ToolStripMenuItem ingresoInventarioToolStripMenuItem;
     }
 }
 

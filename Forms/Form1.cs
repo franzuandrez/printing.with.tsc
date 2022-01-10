@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TSCLIB_DLL_IN_C_Sharp.Forms;
 
 namespace TSCLIB_DLL_IN_C_Sharp
 {
@@ -55,25 +56,41 @@ namespace TSCLIB_DLL_IN_C_Sharp
         {
 
 
-            if (this.pnMain.Controls.Count > 0)
-            {
-                this.pnMain.Controls.RemoveAt(0);
-            }
+            clearMainPanel();
             FrmPendingOrders frmPendingOrders = new FrmPendingOrders();
-            frmPendingOrders.TopLevel = false;
-            frmPendingOrders.Dock = DockStyle.Fill;
-            this.pnMain.Controls.Add(frmPendingOrders);
-            this.pnMain.Tag = frmPendingOrders;
-            this.pnMain.Size = frmPendingOrders.Size;
-            this.Location = frmPendingOrders.Location;
-            frmPendingOrders.Show();
-            
+            loadFormToPanel(frmPendingOrders);
+
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ingresoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clearMainPanel();
+            FrmInventory frmInventoryPrintouts = new FrmInventory();
+            loadFormToPanel(frmInventoryPrintouts);
+        }
+
+        private void loadFormToPanel(Form frm)
+        {
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            this.pnMain.Controls.Add(frm);
+            this.pnMain.Tag = frm;
+            this.pnMain.Size = frm.Size;
+            this.Location = frm.Location;
+            frm.Show();
+        }
+        private void clearMainPanel()
+        {
+            if (this.pnMain.Controls.Count > 0)
+            {
+                this.pnMain.Controls.RemoveAt(0);
+            }
         }
     }
 }
