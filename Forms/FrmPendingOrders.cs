@@ -154,6 +154,18 @@ namespace TSCLIB_DLL_IN_C_Sharp
         {
 
             var labelSelected = labelsTypes.Find(label => label.Id == Int32.Parse(cmbxLabelsType.SelectedValue.ToString()));
+            bool isSelected = int.TryParse(lblID.Text, out _);
+
+            if (!isSelected)
+            {
+                MessageBox.Show("Seleccione un producto",
+                 "Producto no seleccionado",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Warning 
+                );
+
+                return;
+            }
 
             PrintoutModel print = new PrintoutModel
              {
