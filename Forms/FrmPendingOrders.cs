@@ -81,8 +81,13 @@ namespace TSCLIB_DLL_IN_C_Sharp
             showProgressBar(pbOrders);
             var orders = await PendingOrdersProcessor.LoadPendingOrders();
             hideProgressBar(pbOrders);
+           
             dataGridOrders.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridOrders.DataSource = orders;
+            dataGridOrders.Columns["Purchase_order_id"].HeaderText = "No. Orden";
+            dataGridOrders.Columns["Vendor"].HeaderText = "Proveedor";
+            dataGridOrders.Columns["Ship_method"].HeaderText = "Método de envio";
+            dataGridOrders.Columns["Order_date"].HeaderText = "Fecha";
             dataGridOrders.ClearSelection();
             loadLabelsType();
 
