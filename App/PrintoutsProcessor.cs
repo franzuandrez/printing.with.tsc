@@ -102,20 +102,9 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
              TSCLIB_DLL.sendcommand("SET TEAR ON");
              TSCLIB_DLL.sendcommand("CODEPAGE UTF-8");
              TSCLIB_DLL.clearbuffer();
-
-             TSCLIB_DLL.windowsfontUnicode(20, 3, 35, 0, 0, 0, "Arial", description);
-
-
-            if(code.Length > 8)
-            {
-               
-                TSCLIB_DLL.barcode("50", "50", "128", "108", "1", "0", "1", "2", code);
-            }
-            else
-            {
-              
-                TSCLIB_DLL.barcode("50", "50", "128", "108", "1", "0", "1", "2", code);
-            }
+             TSCLIB_DLL.windowsfontUnicode(20, 3, 35, 0, 0, 0, "Arial", description);  
+             TSCLIB_DLL.barcode("50", "50", "128", "108", "1", "0", "1", "2", code);
+            
              
              TSCLIB_DLL.printlabel("1", "1");
             
