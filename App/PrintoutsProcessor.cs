@@ -75,7 +75,7 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
 
         
 
-        public static void print( string code , string description , int quantity )
+        public static void print( string code , string description , int quantity , LabelTypeModel label )
         {
            
            
@@ -86,29 +86,35 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
             byte[] result_unicode = System.Text.Encoding.GetEncoding("utf-16").GetBytes(description);
             for (int i = 0; i < quantity; i++)
             {
-                sendCommand(code, result_unicode);
+                sendCommand(code, result_unicode, label);
             }
            
             TSCLIB_DLL.closeport();
         }
 
-        private static void sendCommand(string code, byte[] description)
+        private static void sendCommand(string code, byte[] description, LabelTypeModel label)
         {
-             TSCLIB_DLL.sendcommand("SIZE 29 mm, 13 mm");
+            
+             TSCLIB_DLL.sendcommand("SIZE "+ label.Name);
              TSCLIB_DLL.sendcommand("SPEED 4");
              TSCLIB_DLL.sendcommand("DENSITY 12");
              TSCLIB_DLL.sendcommand("DIRECTION 1");
              TSCLIB_DLL.sendcommand("SET TEAR ON");
              TSCLIB_DLL.sendcommand("CODEPAGE UTF-8");
              TSCLIB_DLL.clearbuffer();
-             TSCLIB_DLL.windowsfontUnicode(20, 3, 18, 0, 0, 0, "Arial", description);
+
+             TSCLIB_DLL.windowsfontUnicode(20, 3, 35, 0, 0, 0, "Arial", description);
+
+
             if(code.Length > 8)
             {
-                TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "1", "1", code);
+               
+                TSCLIB_DLL.barcode("50", "50", "128", "108", "1", "0", "1", "2", code);
             }
             else
             {
-                TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "2", "1", code);
+              
+                TSCLIB_DLL.barcode("50", "50", "128", "108", "1", "0", "1", "2", code);
             }
              
              TSCLIB_DLL.printlabel("1", "1");

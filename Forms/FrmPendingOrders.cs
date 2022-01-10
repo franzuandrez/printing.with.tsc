@@ -23,6 +23,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
         private List<PrintoutModel> printouts;
         DataGridViewRow orderSelected;
         DataGridViewRow rowToPrint;
+        private List<LabelTypeModel> labelsTypes;
 
         private void showProgressBar(ProgressBar progressBar)
         {
@@ -52,8 +53,9 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         private void loadLabelsType()
         {
-          
-            this.cmbxLabelsType.DataSource = LabelTypes.labels(); ;
+
+            labelsTypes = LabelTypes.labels();
+            this.cmbxLabelsType.DataSource = labelsTypes ;
             this.cmbxLabelsType.DisplayMember = "Name";
             this.cmbxLabelsType.ValueMember = "Id";
             this.cmbxLabelsType.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -125,10 +127,11 @@ namespace TSCLIB_DLL_IN_C_Sharp
 
         private void btnImprimirTodo_Click(object sender, EventArgs e)
         {
+            var labelSelected = labelsTypes.Find(label => label.Id == Int32.Parse(cmbxLabelsType.SelectedValue.ToString()));
             foreach (PrintoutModel print in printouts)
             {
                 int qty = print.Quantity - print.Quantity_Printed;
-                PrintoutsProcessor.print(print.Sku, print.Name, qty);
+                PrintoutsProcessor.print(print.Sku, print.Name, qty, labelSelected);
             }
         }
 
@@ -136,7 +139,8 @@ namespace TSCLIB_DLL_IN_C_Sharp
         private async void  btnImprimir_Click(object sender, EventArgs e)
         {
 
-           
+            var labelSelected = labelsTypes.Find(label => label.Id == Int32.Parse(cmbxLabelsType.SelectedValue.ToString()));
+
             PrintoutModel print = new PrintoutModel
              {
                 Id = Int32.Parse(lblID.Text),
@@ -148,7 +152,7 @@ namespace TSCLIB_DLL_IN_C_Sharp
             List<PrintoutModel> printoutModels =  new List<PrintoutModel>();
             printoutModels.Add(print);
             await PrintoutsProcessor.storePrintouts(printoutModels);
-            PrintoutsProcessor.print(lblSKU.Text, lblName.Text, Int32.Parse(txtQuantity.Text));
+            PrintoutsProcessor.print(lblSKU.Text, lblName.Text, Int32.Parse(txtQuantity.Text), labelSelected);
             if (orderSelected != null)
             {
                 loadPrintingList();
