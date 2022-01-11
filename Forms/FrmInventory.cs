@@ -12,6 +12,8 @@ namespace TSCLIB_DLL_IN_C_Sharp.Forms
 {
     public partial class FrmInventory : Form
     {
+        DataGridViewRow rowToPrint;
+
         public FrmInventory()
         {
             InitializeComponent();
@@ -26,6 +28,34 @@ namespace TSCLIB_DLL_IN_C_Sharp.Forms
             dataGridInventoryPrintouts.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridInventoryPrintouts.DataSource = orders;
             dataGridInventoryPrintouts.ClearSelection();
+        }
+
+        private void dataGridInventoryPrintouts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                rowToPrint = this.dataGridInventoryPrintouts.Rows[e.RowIndex];
+                setValuesPrintSelected();
+
+
+            }
+        }
+
+        private void setValuesPrintSelected()
+        {
+
+            String quantity = (Int32.Parse(rowToPrint.Cells["Quantity"].Value.ToString()) - Int32.Parse(rowToPrint.Cells["Quantity_Printed"].Value.ToString())).ToString();
+
+            lblSKU.Text = rowToPrint.Cells["Sku"].Value.ToString();
+            lblID.Text = rowToPrint.Cells["Id"].Value.ToString();
+            txtQuantity.Text = quantity;
+            rtxtDescription.Text = rowToPrint.Cells["Description"].Value.ToString();
+            lblName.Text = rowToPrint.Cells["Name"].Value.ToString();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
