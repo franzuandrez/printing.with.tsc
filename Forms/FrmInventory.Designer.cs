@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnImprimirTodo = new System.Windows.Forms.Button();
+            this.pgBarPrintouts = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventoryPrintouts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,11 +193,19 @@
             this.btnImprimirTodo.Text = "Imprimir todos los pendientes";
             this.btnImprimirTodo.UseVisualStyleBackColor = true;
             // 
+            // pgBarPrintouts
+            // 
+            this.pgBarPrintouts.Location = new System.Drawing.Point(12, 244);
+            this.pgBarPrintouts.Name = "pgBarPrintouts";
+            this.pgBarPrintouts.Size = new System.Drawing.Size(794, 23);
+            this.pgBarPrintouts.TabIndex = 37;
+            // 
             // FrmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 566);
+            this.Controls.Add(this.pgBarPrintouts);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbxLabelsType);
             this.Controls.Add(this.lblID);
@@ -240,5 +249,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnImprimirTodo;
+        private System.Windows.Forms.ProgressBar pgBarPrintouts;
     }
 }
