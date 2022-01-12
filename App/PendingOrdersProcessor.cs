@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -11,10 +12,10 @@ namespace TSCLIB_DLL_IN_C_Sharp
 {
     public class PendingOrdersProcessor
     {
-
+        private static string API_URL = Settings.Default.API_URL;
         public static async Task<List<PurchaseModel>> LoadPendingOrders()
         {
-            string url = "https://localhost/api-gomezmedical/public/api/v1/purchases?status=2";
+            string url = $"{API_URL}/purchases?status=2";
 
 
             using (HttpResponseMessage response = await APIHelper.APIClient.GetAsync(url))

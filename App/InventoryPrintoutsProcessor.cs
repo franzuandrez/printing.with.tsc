@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -12,10 +13,11 @@ namespace TSCLIB_DLL_IN_C_Sharp.App
 {
     public class InventoryPrintoutsProcessor
     {
-
+        private static string API_URL = Settings.Default.API_URL;
         public static async Task<List<PrintoutModel>> loadInventoryPrintous()
         {
-            string url = $"https://localhost/api-gomezmedical/public/api/v1/inventory_printouts";
+            
+            string url = $"{API_URL}/inventory_printouts";
 
 
             using ( HttpResponseMessage response = await APIHelper.APIClient.GetAsync(url))
