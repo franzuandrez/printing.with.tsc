@@ -17,6 +17,7 @@
 mono_crash.*
 #for settings
 Settings.settings
+Settings.Designer.cs
 
 # Build results
 [Dd]ebug/
