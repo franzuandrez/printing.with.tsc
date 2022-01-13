@@ -46,10 +46,10 @@ namespace TSCLIB_DLL_IN_C_Sharp.Forms
             progressBar.Visible = false;
 
         }
-        private void loadLabelsType()
+        private async void loadLabelsType()
         {
 
-            labelsTypes = LabelTypes.labels();
+            labelsTypes = await LabelTypeProcesor.loadLabels(); ;
             this.cmbxLabelsType.DataSource = labelsTypes;
             this.cmbxLabelsType.DisplayMember = "Name";
             this.cmbxLabelsType.ValueMember = "Id";
