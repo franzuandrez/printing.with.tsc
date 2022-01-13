@@ -108,7 +108,7 @@ namespace TSCLIB_DLL_IN_C_Sharp.Forms
 
         private async void btnImprimir_Click(object sender, EventArgs e)
         {
-            var labelSelected = labelsTypes.Find(label => label.Id == Int32.Parse(cmbxLabelsType.SelectedValue.ToString()));
+            var labelSelected = labelsTypes.Find(label => label.id == Int32.Parse(cmbxLabelsType.SelectedValue.ToString()));
             bool isPrintoutSelected = int.TryParse(lblID.Text, out _);
 
             if (!isPrintoutSelected)

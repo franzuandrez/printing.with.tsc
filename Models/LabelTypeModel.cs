@@ -8,22 +8,22 @@ namespace TSCLIB_DLL_IN_C_Sharp.Models
 {
     public class LabelTypeModel
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public Double LabelWidth { get; set; }
-        public Double LabelHeight { get; set; }
-        public Double XValue { get; set; }
-        public Double YValue { get; set; }
-        public String Type { get; set; }
-        public Double CodeHeight { get; set; }
-        public Boolean Readable { get; set; }
-        public Double Rotation{ get; set; }
-        public Double Narrow{ get; set; }
-        public Double Wide{ get; set; }
-        public String Unit{ get; set; }
-        public Double XProductName{ get; set; }
-        public Double YProductName{ get; set; }
-        public Double HeightProductName { get; set; }
+        public int id { get; set; }
+        public String name { get; set; }
+        public Double label_width { get; set; }
+        public Double label_height { get; set; }
+        public Double x_value { get; set; }
+        public Double y_value { get; set; }
+        public String type { get; set; }
+        public Double code_height { get; set; }
+        public int readable { get; set; }
+        public Double rotation { get; set; }
+        public Double narrow { get; set; }
+        public Double wide { get; set; }
+        public String unit{ get; set; }
+        public Double x_product_name { get; set; }
+        public Double y_product_name { get; set; }
+        public Double height_product_name { get; set; }
 
 
 
