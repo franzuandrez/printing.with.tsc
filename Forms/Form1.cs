@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using TSCLIB_DLL_IN_C_Sharp.Forms;
@@ -11,43 +12,76 @@ namespace TSCLIB_DLL_IN_C_Sharp
 {
     public partial class Form1 : Form
     {
+
+        //Fields
+        private Button currentButton;
+        private Form activeForm;
+
         public Form1()
         {
             InitializeComponent();
             pnMain.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left;
             //pnMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-        }
+            this.Text = String.Empty;
+            this.ControlBox = false;
+            btnClose.Visible = false;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-        private void button1_Click(object sender, EventArgs e)
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void ActivateButton(object btnSender)
         {
-           // string WT1 = "Franzua Andrez";
-            string B1 = "1234567890";
-            byte[] result_unicode = System.Text.Encoding.GetEncoding("utf-16").GetBytes("Franzua Andrez");
-            //byte[] result_utf8 = System.Text.Encoding.UTF8.GetBytes("TEXT 10,10,\"ARIAL.TTF\",0,10,10,\"utf8 Franzua Andrez\"");
-
-            //TSCLIB_DLL.about();
-            byte status = TSCLIB_DLL.usbportqueryprinter();//0 = idle, 1 = head open, 16 = pause, following <ESC>!? command of TSPL manual
-            TSCLIB_DLL.openport("TSC TE200");
-            TSCLIB_DLL.sendcommand("SIZE 29 mm, 13 mm");
-            TSCLIB_DLL.sendcommand("SPEED 4");
-            TSCLIB_DLL.sendcommand("DENSITY 12");
-            TSCLIB_DLL.sendcommand("DIRECTION 1");
-            TSCLIB_DLL.sendcommand("SET TEAR ON");
-            TSCLIB_DLL.sendcommand("CODEPAGE UTF-8");
-            TSCLIB_DLL.clearbuffer();
-            //TSCLIB_DLL.downloadpcx("UL.PCX", "UL.PCX");
-            //TSCLIB_DLL.windowsfont(0, 0, 12, 0, 0, 0, "Arial", "Windows Font Test");
-            TSCLIB_DLL.windowsfontUnicode(20, 3, 18, 0, 0, 0, "Arial", result_unicode);
-           // TSCLIB_DLL.sendcommand("PUTPCX 1,1,\"UL.PCX\"");
-           // TSCLIB_DLL.sendBinaryData(result_utf8, result_utf8.Length);
-            //TSCLIB_DLL.barcode("20", "20", "128", "28", "1", "0", "2", "2", B1);
-            TSCLIB_DLL.barcode("20", "20", "128", "48", "1", "0", "2", "2", B1);
-           // TSCLIB_DLL.printerfont("20", "10", "0", "0", "15", "15", WT1);
-            TSCLIB_DLL.printlabel("1", "1");
-            TSCLIB_DLL.closeport();
-
-            
+            if (btnSender != null)
+            {
+                if (currentButton != (Button)btnSender)
+                {
+                    DisableButton();
+                    Color color = ColorTranslator.FromHtml("#2196f3");
+                    currentButton = (Button)btnSender;
+                    currentButton.BackColor = color;
+                    currentButton.ForeColor = Color.White;
+                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    pnTitle.BackColor = color;
+                    pnLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    ThemeColor.PrimaryColor = color;
+                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    btnClose.Visible = true;
+                }
+            }
         }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in pnSideBar.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
+
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+             this.pnMain.Controls.Add(childForm);
+            this.pnMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitle.Text = childForm.Text;
+        }
+
+       
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -98,6 +132,66 @@ namespace TSCLIB_DLL_IN_C_Sharp
         private void pnMain_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmPendingOrders(), sender);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmInventory(), sender);
+        }
+
+        private void pnMain_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+
+            if (activeForm != null)
+                activeForm.Close();
+
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            lblTitle.Text = "INICIO";
+            currentButton = null;
+            btnClose.Visible = false;
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void pnTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
