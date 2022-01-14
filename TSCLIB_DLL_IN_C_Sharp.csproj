@@ -99,6 +99,7 @@
     <Compile Include="Forms\FrmInventory.Designer.cs">
       <DependentUpon>FrmInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ThemeColor.cs" />
     <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
