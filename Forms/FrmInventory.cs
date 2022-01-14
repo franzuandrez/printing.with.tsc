@@ -79,10 +79,31 @@ namespace TSCLIB_DLL_IN_C_Sharp.Forms
         {
             APIHelper.InitializeCliente();
             loadInventoryPrintouts();
-
+            loadTheme();
 
         }
+        private void loadTheme()
+        {
+            foreach ( Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button)){
 
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+
+                }
+            }
+            lblNameTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblLabelTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblQuantityTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblImpresionTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblSkuTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblDescriptionTitle.ForeColor = ThemeColor.SecondaryColor;
+       
+
+        }
         private void dataGridInventoryPrintouts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

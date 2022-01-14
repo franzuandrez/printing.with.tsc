@@ -8,6 +8,8 @@ using TSCLIB_DLL_IN_C_Sharp.App;
 using TSCLIB_DLL_IN_C_Sharp.Models;
 using System.Linq;
 using TSCLIB_DLL_IN_C_Sharp.DataSource;
+using TSCLIB_DLL_IN_C_Sharp.Forms;
+using System.Drawing;
 
 namespace TSCLIB_DLL_IN_C_Sharp
 {
@@ -83,9 +85,36 @@ namespace TSCLIB_DLL_IN_C_Sharp
             dataGridPrintouts.ClearSelection();
 
         }
+        private void loadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+
+                }
+            }
+            label1.ForeColor = ThemeColor.SecondaryColor;
+            lblNameTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblLabelTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblQuantityTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblImpresionTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblSkuTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblDescriptionTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblVendorTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblDateTitle.ForeColor = ThemeColor.SecondaryColor;
+            lblPrintoutsTitle.ForeColor = ThemeColor.SecondaryColor;
+
+
+        }
         private async void FrmPendingOrders_Load(object sender, EventArgs e)
         {
-
+            loadTheme();
             APIHelper.InitializeCliente();
             showProgressBar(pbOrders);
             var orders = await PendingOrdersProcessor.LoadPendingOrders();

@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.dataGridInventoryPrintouts = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblImpresionTitle = new System.Windows.Forms.Label();
+            this.lblLabelTitle = new System.Windows.Forms.Label();
             this.cmbxLabelsType = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNameTitle = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.rtxtDescription = new System.Windows.Forms.RichTextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDescriptionTitle = new System.Windows.Forms.Label();
+            this.lblQuantityTitle = new System.Windows.Forms.Label();
             this.lblSKU = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSkuTitle = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnImprimirTodo = new System.Windows.Forms.Button();
             this.pgBarPrintouts = new System.Windows.Forms.ProgressBar();
@@ -50,36 +50,36 @@
             // dataGridInventoryPrintouts
             // 
             this.dataGridInventoryPrintouts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridInventoryPrintouts.Location = new System.Drawing.Point(12, 79);
+            this.dataGridInventoryPrintouts.Location = new System.Drawing.Point(12, 46);
             this.dataGridInventoryPrintouts.Name = "dataGridInventoryPrintouts";
-            this.dataGridInventoryPrintouts.Size = new System.Drawing.Size(794, 460);
+            this.dataGridInventoryPrintouts.Size = new System.Drawing.Size(946, 465);
             this.dataGridInventoryPrintouts.TabIndex = 0;
             this.dataGridInventoryPrintouts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridInventoryPrintouts_CellClick);
             // 
-            // label2
+            // lblImpresionTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 30);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Impresiones";
+            this.lblImpresionTitle.AutoSize = true;
+            this.lblImpresionTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImpresionTitle.Location = new System.Drawing.Point(12, 13);
+            this.lblImpresionTitle.Name = "lblImpresionTitle";
+            this.lblImpresionTitle.Size = new System.Drawing.Size(136, 30);
+            this.lblImpresionTitle.TabIndex = 5;
+            this.lblImpresionTitle.Text = "Impresiones";
             // 
-            // label6
+            // lblLabelTitle
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(809, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 15);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Etiqueta:";
+            this.lblLabelTitle.AutoSize = true;
+            this.lblLabelTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLabelTitle.Location = new System.Drawing.Point(961, 45);
+            this.lblLabelTitle.Name = "lblLabelTitle";
+            this.lblLabelTitle.Size = new System.Drawing.Size(62, 15);
+            this.lblLabelTitle.TabIndex = 36;
+            this.lblLabelTitle.Text = "Etiqueta:";
             // 
             // cmbxLabelsType
             // 
             this.cmbxLabelsType.FormattingEnabled = true;
-            this.cmbxLabelsType.Location = new System.Drawing.Point(812, 92);
+            this.cmbxLabelsType.Location = new System.Drawing.Point(964, 63);
             this.cmbxLabelsType.Name = "cmbxLabelsType";
             this.cmbxLabelsType.Size = new System.Drawing.Size(200, 21);
             this.cmbxLabelsType.TabIndex = 35;
@@ -87,7 +87,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(806, 46);
+            this.lblID.Location = new System.Drawing.Point(958, 17);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(58, 13);
             this.lblID.TabIndex = 34;
@@ -98,26 +98,26 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(812, 186);
+            this.lblName.Location = new System.Drawing.Point(964, 157);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(75, 15);
             this.lblName.TabIndex = 33;
             this.lblName.Text = "-----------------";
             // 
-            // label4
+            // lblNameTitle
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(809, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 15);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Nombre:";
+            this.lblNameTitle.AutoSize = true;
+            this.lblNameTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameTitle.Location = new System.Drawing.Point(961, 144);
+            this.lblNameTitle.Name = "lblNameTitle";
+            this.lblNameTitle.Size = new System.Drawing.Size(61, 15);
+            this.lblNameTitle.TabIndex = 32;
+            this.lblNameTitle.Text = "Nombre:";
             // 
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(812, 425);
+            this.txtQuantity.Location = new System.Drawing.Point(964, 396);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(200, 22);
             this.txtQuantity.TabIndex = 31;
@@ -126,56 +126,57 @@
             // 
             this.rtxtDescription.Enabled = false;
             this.rtxtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtDescription.Location = new System.Drawing.Point(812, 227);
+            this.rtxtDescription.Location = new System.Drawing.Point(964, 198);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(200, 168);
             this.rtxtDescription.TabIndex = 30;
             this.rtxtDescription.Text = "";
             // 
-            // lblDescription
+            // lblDescriptionTitle
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(809, 211);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(84, 15);
-            this.lblDescription.TabIndex = 29;
-            this.lblDescription.Text = "Descripción:";
+            this.lblDescriptionTitle.AutoSize = true;
+            this.lblDescriptionTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescriptionTitle.Location = new System.Drawing.Point(961, 182);
+            this.lblDescriptionTitle.Name = "lblDescriptionTitle";
+            this.lblDescriptionTitle.Size = new System.Drawing.Size(84, 15);
+            this.lblDescriptionTitle.TabIndex = 29;
+            this.lblDescriptionTitle.Text = "Descripción:";
             // 
-            // label5
+            // lblQuantityTitle
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(812, 408);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 15);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Cantidad:";
+            this.lblQuantityTitle.AutoSize = true;
+            this.lblQuantityTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantityTitle.Location = new System.Drawing.Point(964, 379);
+            this.lblQuantityTitle.Name = "lblQuantityTitle";
+            this.lblQuantityTitle.Size = new System.Drawing.Size(67, 15);
+            this.lblQuantityTitle.TabIndex = 28;
+            this.lblQuantityTitle.Text = "Cantidad:";
             // 
             // lblSKU
             // 
             this.lblSKU.AutoSize = true;
             this.lblSKU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSKU.Location = new System.Drawing.Point(809, 150);
+            this.lblSKU.Location = new System.Drawing.Point(961, 121);
             this.lblSKU.Name = "lblSKU";
             this.lblSKU.Size = new System.Drawing.Size(75, 15);
             this.lblSKU.TabIndex = 27;
             this.lblSKU.Text = "-----------------";
             // 
-            // label3
+            // lblSkuTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(809, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 15);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "SKU:";
+            this.lblSkuTitle.AutoSize = true;
+            this.lblSkuTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkuTitle.Location = new System.Drawing.Point(961, 96);
+            this.lblSkuTitle.Name = "lblSkuTitle";
+            this.lblSkuTitle.Size = new System.Drawing.Size(35, 15);
+            this.lblSkuTitle.TabIndex = 26;
+            this.lblSkuTitle.Text = "SKU:";
             // 
             // btnImprimir
             // 
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(812, 451);
+            this.btnImprimir.Location = new System.Drawing.Point(964, 422);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 36);
             this.btnImprimir.TabIndex = 25;
@@ -185,8 +186,9 @@
             // 
             // btnImprimirTodo
             // 
+            this.btnImprimirTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirTodo.Location = new System.Drawing.Point(812, 492);
+            this.btnImprimirTodo.Location = new System.Drawing.Point(964, 463);
             this.btnImprimirTodo.Name = "btnImprimirTodo";
             this.btnImprimirTodo.Size = new System.Drawing.Size(200, 47);
             this.btnImprimirTodo.TabIndex = 24;
@@ -195,31 +197,31 @@
             // 
             // pgBarPrintouts
             // 
-            this.pgBarPrintouts.Location = new System.Drawing.Point(12, 244);
+            this.pgBarPrintouts.Location = new System.Drawing.Point(12, 211);
             this.pgBarPrintouts.Name = "pgBarPrintouts";
-            this.pgBarPrintouts.Size = new System.Drawing.Size(794, 23);
+            this.pgBarPrintouts.Size = new System.Drawing.Size(946, 23);
             this.pgBarPrintouts.TabIndex = 37;
             // 
             // FrmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 566);
+            this.ClientSize = new System.Drawing.Size(1261, 540);
             this.Controls.Add(this.pgBarPrintouts);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblLabelTitle);
             this.Controls.Add(this.cmbxLabelsType);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblNameTitle);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.rtxtDescription);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblDescriptionTitle);
+            this.Controls.Add(this.lblQuantityTitle);
             this.Controls.Add(this.lblSKU);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSkuTitle);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnImprimirTodo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblImpresionTitle);
             this.Controls.Add(this.dataGridInventoryPrintouts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInventory";
@@ -235,18 +237,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridInventoryPrintouts;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblImpresionTitle;
+        private System.Windows.Forms.Label lblLabelTitle;
         private System.Windows.Forms.ComboBox cmbxLabelsType;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNameTitle;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.RichTextBox rtxtDescription;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDescriptionTitle;
+        private System.Windows.Forms.Label lblQuantityTitle;
         private System.Windows.Forms.Label lblSKU;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSkuTitle;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnImprimirTodo;
         private System.Windows.Forms.ProgressBar pgBarPrintouts;
