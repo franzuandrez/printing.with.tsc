@@ -34,9 +34,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pnLogo = new System.Windows.Forms.Panel();
             this.pnTitle = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnSideBar.SuspendLayout();
             this.pnTitle.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.pnSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnSideBar.Location = new System.Drawing.Point(0, 0);
             this.pnSideBar.Name = "pnSideBar";
-            this.pnSideBar.Size = new System.Drawing.Size(251, 900);
+            this.pnSideBar.Size = new System.Drawing.Size(214, 900);
             this.pnSideBar.TabIndex = 3;
             // 
             // button2
@@ -64,9 +64,9 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 140);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(251, 60);
+            this.button2.Size = new System.Drawing.Size(214, 60);
             this.button2.TabIndex = 6;
-            this.button2.Text = "       Ingreso de inventario";
+            this.button2.Text = "            Ingreso de inventario";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -81,9 +81,9 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 80);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 60);
+            this.button1.Size = new System.Drawing.Size(214, 60);
             this.button1.TabIndex = 5;
-            this.button1.Text = "      Ordenes de compra";
+            this.button1.Text = "         Ordenes de compra";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -93,7 +93,7 @@
             this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
             this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(251, 80);
+            this.pnLogo.Size = new System.Drawing.Size(214, 80);
             this.pnLogo.TabIndex = 4;
             // 
             // pnTitle
@@ -102,12 +102,25 @@
             this.pnTitle.Controls.Add(this.btnClose);
             this.pnTitle.Controls.Add(this.lblTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTitle.Location = new System.Drawing.Point(251, 0);
+            this.pnTitle.Location = new System.Drawing.Point(214, 0);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1233, 80);
+            this.pnTitle.Size = new System.Drawing.Size(1270, 80);
             this.pnTitle.TabIndex = 4;
             this.pnTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTitle_Paint);
             this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseDown);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 80);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTitle
             // 
@@ -123,24 +136,11 @@
             // pnMain
             // 
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(251, 80);
+            this.pnMain.Location = new System.Drawing.Point(214, 80);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1233, 820);
+            this.pnMain.Size = new System.Drawing.Size(1270, 820);
             this.pnMain.TabIndex = 5;
             this.pnMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMain_Paint_1);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(0, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 80);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // Form1
             // 
@@ -152,7 +152,7 @@
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.pnSideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1300, 900);
+            this.MinimumSize = new System.Drawing.Size(1300, 726);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
