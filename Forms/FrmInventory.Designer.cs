@@ -1,4 +1,4 @@
-namespace TSCLIB_DLL_IN_C_Sharp.Forms
+﻿namespace TSCLIB_DLL_IN_C_Sharp.Forms
 {
     partial class FrmInventory
     {
@@ -225,7 +225,7 @@ namespace TSCLIB_DLL_IN_C_Sharp.Forms
             this.Controls.Add(this.dataGridInventoryPrintouts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInventory";
-            this.Text = "FrmInventory";
+            this.Text = "Impresiones de inventario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridInventoryPrintouts)).EndInit();
